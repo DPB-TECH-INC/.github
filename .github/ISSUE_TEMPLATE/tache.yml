@@ -1,0 +1,37 @@
+name: Tâche
+description: Un travail clair et réalisable
+type: Task
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Après la création, renseignez **Priority** et **Estimate (days)** dans le panneau de droite de l'issue. Au-delà de 2 jours d'estimation, découpez la tâche.
+  - type: textarea
+    id: contexte
+    attributes:
+      label: Contexte
+      description: Pourquoi ce travail ? Ajoutez un lien vers la décision ou le projet concerné.
+    validations:
+      required: true
+  - type: textarea
+    id: a-faire
+    attributes:
+      label: À faire
+      description: Une issue = un travail clair. Si c'est trop gros, découpez-le en plusieurs issues.
+    validations:
+      required: true
+  - type: textarea
+    id: criteres
+    attributes:
+      label: Critères d'acceptation
+      description: Liste vérifiable. La tâche est terminée quand toutes les cases sont cochées.
+      value: |
+        - [ ]
+        - [ ]
+    validations:
+      required: true
+  - type: textarea
+    id: dependances
+    attributes:
+      label: Dépendances
+      description: Issues ou décisions à terminer avant celle-ci (facultatif).
