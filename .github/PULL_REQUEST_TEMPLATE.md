@@ -1,21 +1,21 @@
-## Résumé
+## Summary
 
-<!-- Ce que change cette PR et pourquoi. -->
+<!-- What this PR changes and why. -->
 
-## Issue liée
+## Linked issue
 
 Closes #
 
-## Changements
+## Changes
 
 - 
 
-## Plan de test
+## Test plan
 
 - [ ] 
 
-## Vérifications
+## Checklist
 
-- [ ] La branche est liée à l'issue
-- [ ] Aucun secret ni donnée client dans le diff
-- [ ] Les critères d'acceptation de l'issue sont remplis
+- [ ] The branch is linked to the issue
+- [ ] No secrets or client data in the diff
+- [ ] The issue's acceptance criteria are met
