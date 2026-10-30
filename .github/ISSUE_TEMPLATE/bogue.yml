@@ -1,46 +1,46 @@
-name: Bogue
-description: Un comportement qui ne fonctionne pas comme prévu
+name: Bug
+description: Something does not work as expected
 type: Bug
 body:
   - type: markdown
     attributes:
       value: |
-        Après la création, renseignez **Priority** et **Estimate (days)** dans le panneau de droite de l'issue.
+        After creating the issue, set **Priority** and **Estimate (days)** in the right-hand panel.
   - type: textarea
     id: description
     attributes:
       label: Description
-      description: Ce qui ne va pas, en une ou deux phrases.
+      description: What is wrong, in one or two sentences.
     validations:
       required: true
   - type: textarea
-    id: reproduction
+    id: steps
     attributes:
-      label: Étapes pour reproduire
+      label: Steps to reproduce
       value: |
         1.
         2.
     validations:
       required: true
   - type: textarea
-    id: obtenu
+    id: actual
     attributes:
-      label: Résultat obtenu
+      label: Actual result
     validations:
       required: true
   - type: textarea
-    id: attendu
+    id: expected
     attributes:
-      label: Résultat attendu
+      label: Expected result
     validations:
       required: true
   - type: textarea
-    id: environnement
+    id: environment
     attributes:
-      label: Environnement
-      description: Navigateur, appareil, version, etc.
+      label: Environment
+      description: Browser, device, version, etc.
   - type: textarea
-    id: erreurs
+    id: errors
     attributes:
-      label: Captures ou messages d'erreur
-      description: Collez le message d'erreur complet. Aucun secret ni donnée client.
+      label: Screenshots or error messages
+      description: Paste the full error message. No secrets or client data.
