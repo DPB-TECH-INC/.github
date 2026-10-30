@@ -1,37 +1,37 @@
-name: Tâche
-description: Un travail clair et réalisable
+name: Task
+description: A clear, achievable piece of work
 type: Task
 body:
   - type: markdown
     attributes:
       value: |
-        Après la création, renseignez **Priority** et **Estimate (days)** dans le panneau de droite de l'issue. Au-delà de 2 jours d'estimation, découpez la tâche.
+        After creating the issue, set **Priority** and **Estimate (days)** in the right-hand panel. If the estimate is above 2 days, split the task.
   - type: textarea
-    id: contexte
+    id: context
     attributes:
-      label: Contexte
-      description: Pourquoi ce travail ? Ajoutez un lien vers la décision ou le projet concerné.
+      label: Context
+      description: Why is this work needed? Link the related decision or project.
     validations:
       required: true
   - type: textarea
-    id: a-faire
+    id: to-do
     attributes:
-      label: À faire
-      description: Une issue = un travail clair. Si c'est trop gros, découpez-le en plusieurs issues.
+      label: What to do
+      description: One issue = one clear piece of work. If it is too big, split it into several issues.
     validations:
       required: true
   - type: textarea
-    id: criteres
+    id: criteria
     attributes:
-      label: Critères d'acceptation
-      description: Liste vérifiable. La tâche est terminée quand toutes les cases sont cochées.
+      label: Acceptance criteria
+      description: A verifiable list. The task is done when every box is checked.
       value: |
         - [ ]
         - [ ]
     validations:
       required: true
   - type: textarea
-    id: dependances
+    id: dependencies
     attributes:
-      label: Dépendances
-      description: Issues ou décisions à terminer avant celle-ci (facultatif).
+      label: Dependencies
+      description: Issues or decisions that must be finished first (optional).
