@@ -1,0 +1,46 @@
+name: Bogue
+description: Un comportement qui ne fonctionne pas comme prévu
+type: Bug
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Après la création, renseignez **Priority** et **Estimate (days)** dans le panneau de droite de l'issue.
+  - type: textarea
+    id: description
+    attributes:
+      label: Description
+      description: Ce qui ne va pas, en une ou deux phrases.
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Étapes pour reproduire
+      value: |
+        1.
+        2.
+    validations:
+      required: true
+  - type: textarea
+    id: obtenu
+    attributes:
+      label: Résultat obtenu
+    validations:
+      required: true
+  - type: textarea
+    id: attendu
+    attributes:
+      label: Résultat attendu
+    validations:
+      required: true
+  - type: textarea
+    id: environnement
+    attributes:
+      label: Environnement
+      description: Navigateur, appareil, version, etc.
+  - type: textarea
+    id: erreurs
+    attributes:
+      label: Captures ou messages d'erreur
+      description: Collez le message d'erreur complet. Aucun secret ni donnée client.
