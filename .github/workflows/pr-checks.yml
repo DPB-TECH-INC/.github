@@ -55,7 +55,7 @@ jobs:
                 core.notice('Cross-repository issue detected: the title is not renamed automatically.');
                 return;
               }
-              core.setFailed('This PR must be linked to an issue: add "Closes #N" (or "Closes DPB-TECH-INC/operations#N") to the description.');
+              core.setFailed('This PR must be linked to an issue: add "Closes #N" (or "Closes DPB-TECH-INC/<repo>#N" for an issue in another repository, with the PR title "<repo>#N: <issue title>") to the description.');
               return;
             }
 
