@@ -20,7 +20,7 @@ La priorité et l'estimation (en jours) se renseignent après la création de l'
 - Une branche par changement, jamais de travail direct sur `main`.
 - Une pull request est liée à une issue : `Closes #N` en première ligne de la description.
 - Fusion en squash uniquement, après la relecture de deux membres de l'équipe.
-- Le titre de la PR est `<numéro de l'issue>: <titre de l'issue>` ; le workflow le renomme automatiquement.
+- Le titre de la PR suit la [nomenclature](#titre-de-la-pr) ci-dessous ; le workflow le renomme automatiquement pour une issue du même dépôt.
 
 ## Utiliser le workflow `pr-checks` dans un dépôt
 
@@ -50,4 +50,17 @@ Le droit `issues: read` est nécessaire : sans lui, le jeton du workflow ne voit
 
 ### Issue d'un autre dépôt
 
-Pour une issue transversale, écrire `Closes DPB-TECH-INC/<dépôt>#N`. Le contrôle accepte la référence, mais le titre de la PR doit alors être renommé à la main (`N: titre`), car le workflow ne peut pas lire les issues d'un autre dépôt privé.
+Pour une issue transversale, écrire `Closes DPB-TECH-INC/<dépôt>#N`. Le contrôle accepte la référence, mais le titre de la PR doit alors être renommé à la main (voir [Titre de la PR](#titre-de-la-pr)), car le workflow ne peut pas lire les issues d'un autre dépôt privé.
+
+## Titre de la PR
+
+La numérotation est propre à chaque dépôt : `operations#12` et `site-web#12` sont deux issues différentes. Le titre de la PR dit donc de quelle issue il s'agit sans ambiguïté.
+
+| L'issue est… | Forme du titre | Exemple |
+|---|---|---|
+| Dans le **même dépôt** que la PR | `<numéro>: <titre de l'issue>` | `12: Page « Contact » sur le site` |
+| Dans **un autre dépôt** | `<dépôt>#<numéro>: <titre de l'issue>` | `operations#12: Page LinkedIn de DPB Tech` |
+
+Le premier cas est renommé automatiquement. Le second se renomme à la main.
+
+Dans une conversation ou un message, nomme aussi le dépôt avec le numéro (`operations#12`), pour ne pas confondre deux issues qui portent le même numéro.

@@ -1,6 +1,6 @@
 Closes #
 
-<!-- Link the issue above. For a cross-repository issue: Closes DPB-TECH-INC/operations#N -->
+<!-- Link the issue above. For a cross-repository issue: Closes DPB-TECH-INC/operations#N, and title the PR "operations#N: <issue title>" (see the README). -->
 
 ## Summary
 

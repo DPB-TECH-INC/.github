@@ -23,7 +23,7 @@ Pas de code applicatif : fichiers YAML (formulaires d'issues, GitHub Actions) et
 
 - **Tout est nommé en anglais** (fichiers, champs, workflows) ; les **descriptions et le contenu écrits par l'équipe sont en français**.
 - Champs des issues : Context, What to do, Acceptance criteria, Dependencies ; Priority et Estimate (days) via les champs d'organisation.
-- **Fusion en squash seul.** Titre de la PR : `<numéro de l'issue>: <titre de l'issue>`, renommé **automatiquement** par un workflow à partir de l'issue liée.
+- **Fusion en squash seul.** Titre de la PR : `<numéro de l'issue>: <titre de l'issue>`, renommé **automatiquement** par un workflow à partir de l'issue liée ; pour une issue d'un autre dépôt, `<dépôt>#<numéro>: <titre de l'issue>`, écrit à la main (la numérotation est propre à chaque dépôt).
 - **Une PR doit être liée à une issue** (`Closes #N`, ou `Closes DPB-TECH-INC/operations#N` pour une issue transversale). Le contrôle passe au rouge sinon.
 - Nom de branche : convention recommandée `<numéro>-<résumé>` (générée par le bouton « Create a branch » de l'issue), **non imposée**.
 - Organisation en forfait **Free** : GitHub ne peut pas rendre les contrôles obligatoires sur dépôts privés. La règle repose sur les **2 relectures humaines** (le modèle de PR contient la case « issue liée et critères remplis »).
