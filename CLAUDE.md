@@ -28,6 +28,8 @@ Pas de code applicatif : fichiers YAML (formulaires d'issues, GitHub Actions) et
 - Nom de branche : convention recommandée `<numéro>-<résumé>` (générée par le bouton « Create a branch » de l'issue), **non imposée**.
 - Organisation en forfait **Free** : GitHub ne peut pas rendre les contrôles obligatoires sur dépôts privés. La règle repose sur les **2 relectures humaines** (le modèle de PR contient la case « issue liée et critères remplis »).
 - Mot « associé » interdit dans les issues : écrire « l'équipe ».
+- Chaque champ et chaque phrase des issues commence par une majuscule.
+- Issues légères : on dit quoi et comment vérifier, jamais comment faire. Une issue = un résultat relisable en une PR. Pas d'issue « parapluie ».
 
 ## Conventions
 
