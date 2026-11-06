@@ -1,0 +1,6 @@
+{
+  "name": "PR checks (DPB Tech)",
+  "description": "Vérifie qu'une issue est liée à la pull request et renomme le titre en « <numéro>: <titre de l'issue> ».",
+  "iconName": "octicon check-circle",
+  "categories": ["Automation"]
+}
