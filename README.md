@@ -11,6 +11,7 @@ Fichiers communs de l'organisation DPB Tech. GitHub les applique automatiquement
 | `.github/ISSUE_TEMPLATE/config.yml` | Désactive les issues vides |
 | `.github/PULL_REQUEST_TEMPLATE.md` | Modèle de pull request, avec le lien vers l'issue en tête |
 | `.github/workflows/pr-checks.yml` | Workflow réutilisable de contrôle des pull requests |
+| `workflow-templates/pr-checks.yml` | Modèle de workflow : appel de `pr-checks` proposé dans l'onglet Actions de chaque dépôt |
 
 La priorité et l'estimation (en jours) se renseignent après la création de l'issue, dans les champs de l'organisation.
 
@@ -25,7 +26,9 @@ La priorité et l'estimation (en jours) se renseignent après la création de l'
 
 Le workflow vérifie qu'une issue est liée à la PR (le contrôle passe au rouge sinon) et renomme le titre. Un dépôt qui ne crée pas de pull requests n'a pas besoin de l'appeler.
 
-Ajouter dans le dépôt le fichier `.github/workflows/pr-checks.yml` :
+**Voie rapide :** dans le dépôt, onglet **Actions** → **New workflow** → section de l'organisation → **PR checks (DPB Tech)** → **Configure** → **Commit**.
+
+**À la main :** ajouter dans le dépôt le fichier `.github/workflows/pr-checks.yml` :
 
 ```yaml
 name: PR checks
