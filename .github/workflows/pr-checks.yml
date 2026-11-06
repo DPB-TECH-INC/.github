@@ -1,0 +1,68 @@
+name: PR checks
+
+# Reusable workflow. Call it from a repository with:
+#
+#   on:
+#     pull_request:
+#       types: [opened, edited, reopened, synchronize]
+#   jobs:
+#     pr-checks:
+#       permissions:
+#         contents: read
+#         pull-requests: write
+#       uses: DPB-TECH-INC/.github/.github/workflows/pr-checks.yml@main
+
+on:
+  workflow_call:
+
+permissions:
+  contents: read
+  pull-requests: write
+
+jobs:
+  linked-issue:
+    name: Linked issue
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check the linked issue and rename the PR
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const pr = context.payload.pull_request;
+            const { owner, repo } = context.repo;
+
+            // Issues linked with a closing keyword or from the PR sidebar.
+            const result = await github.graphql(`
+              query($owner: String!, $repo: String!, $number: Int!) {
+                repository(owner: $owner, name: $repo) {
+                  pullRequest(number: $number) {
+                    closingIssuesReferences(first: 1) {
+                      nodes { number title }
+                    }
+                  }
+                }
+              }`, { owner, repo, number: pr.number });
+
+            const [issue] = result.repository.pullRequest.closingIssuesReferences.nodes;
+
+            if (!issue) {
+              // The workflow token may not see an issue in another private
+              // repository: accept an explicit cross-repository reference.
+              const crossRepo = /\b(?:close[sd]?|fix(?:e[sd])?|resolve[sd]?)\s+DPB-TECH-INC\/[\w.-]+#\d+/i;
+              if (crossRepo.test(pr.body ?? '')) {
+                core.notice('Cross-repository issue detected: the title is not renamed automatically.');
+                return;
+              }
+              core.setFailed('This PR must be linked to an issue: add "Closes #N" (or "Closes DPB-TECH-INC/operations#N") to the description.');
+              return;
+            }
+
+            const expectedTitle = `${issue.number}: ${issue.title}`;
+            if (pr.title !== expectedTitle) {
+              await github.rest.pulls.update({
+                owner, repo,
+                pull_number: pr.number,
+                title: expectedTitle,
+              });
+              core.info(`Title renamed to "${expectedTitle}".`);
+            }
