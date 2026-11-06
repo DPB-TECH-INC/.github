@@ -1,0 +1,44 @@
+# DPB Tech — dépôt `.github` de l'organisation
+
+## Description
+
+Dépôt des fichiers communs de l'organisation GitHub `DPB-TECH-INC` : formulaires d'issues, modèle de pull request et workflow réutilisable de contrôle des PR. GitHub applique les formulaires et le modèle à tous les dépôts qui n'ont pas les leurs.
+
+**Ce dépôt est PUBLIC** : aucun secret, aucun document client, aucune information interne ou confidentielle.
+
+Le dossier local est `dpb-tech-github-org` pour éviter un dossier caché ; le dépôt distant s'appelle bien `.github`.
+
+## Stack
+
+Pas de code applicatif : fichiers YAML (formulaires d'issues, GitHub Actions) et Markdown.
+
+## Contenu actuel (au 2026-11-06)
+
+- `.github/ISSUE_TEMPLATE/` : `tache.yml`, `bogue.yml`, `config.yml` (issues vides désactivées)
+- `.github/PULL_REQUEST_TEMPLATE.md`
+- `README.md`
+
+## Décisions prises (à appliquer)
+
+- **Tout est nommé en anglais** (fichiers, champs, workflows) ; les **descriptions et le contenu écrits par l'équipe sont en français**.
+- Fichiers à renommer : `tache.yml` → `task.yml`, `bogue.yml` → `bug.yml`.
+- Champs des issues : Context, What to do, Acceptance criteria, Dependencies ; Priority et Estimate (days) via les champs d'organisation.
+- **Fusion en squash seul.** Titre de la PR : `<numéro de l'issue>: <titre de l'issue>`, renommé **automatiquement** par un workflow à partir de l'issue liée.
+- **Une PR doit être liée à une issue** (`Closes #N`, ou `Closes DPB-TECH-INC/operations#N` pour une issue transversale). Le contrôle passe au rouge sinon.
+- Nom de branche : convention recommandée `<numéro>-<résumé>` (générée par le bouton « Create a branch » de l'issue), **non imposée**.
+- Organisation en forfait **Free** : GitHub ne peut pas rendre les contrôles obligatoires sur dépôts privés. La règle repose sur les **2 relectures humaines** (le modèle de PR contient la case « issue liée et critères remplis »).
+- Mot « associé » interdit dans les issues : écrire « l'équipe ».
+
+## Conventions
+
+- Aucune branche de travail directement sur `main` : une branche par changement, une PR, relecture par les deux autres membres.
+- Aucun push, PR ou fusion sans demande explicite d'un membre de l'équipe.
+- Ces fichiers sont d'abord préparés puis validés par l'équipe avant toute généralisation.
+
+## Avancement
+
+- [x] Dépôt créé, 4 fichiers de modèles en place (anglais)
+- [ ] Renommer `tache.yml` / `bogue.yml` en `task.yml` / `bug.yml` et aligner les champs
+- [ ] Modèle de PR : lien vers l'issue en tête, case « issue liée et critères d'acceptation remplis »
+- [ ] Workflow réutilisable `pr-checks.yml` : issue liée (rouge sinon) + renommage automatique du titre
+- [ ] README : contenu du dépôt et appel du workflow depuis un autre dépôt
