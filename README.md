@@ -41,9 +41,12 @@ jobs:
   pr-checks:
     permissions:
       contents: read
+      issues: read
       pull-requests: write
     uses: DPB-TECH-INC/.github/.github/workflows/pr-checks.yml@main
 ```
+
+Le droit `issues: read` est nécessaire : sans lui, le jeton du workflow ne voit pas les issues d'un dépôt privé et le contrôle échoue à tort (« This PR must be linked to an issue »), même quand le lien existe.
 
 ### Issue d'un autre dépôt
 

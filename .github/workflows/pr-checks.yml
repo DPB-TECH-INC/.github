@@ -9,6 +9,7 @@ name: PR checks
 #     pr-checks:
 #       permissions:
 #         contents: read
+#         issues: read
 #         pull-requests: write
 #       uses: DPB-TECH-INC/.github/.github/workflows/pr-checks.yml@main
 
@@ -17,6 +18,7 @@ on:
 
 permissions:
   contents: read
+  issues: read
   pull-requests: write
 
 jobs:
